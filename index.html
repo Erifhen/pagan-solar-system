@@ -16,13 +16,15 @@
         <h1>Sistema solar pagão</h1>
     </header>
 
-    <div id="info-window"></div>
+    <div id="info-window">
+        <button class="close-button">&times;</button>
+    </div>
 
     <!--Criando nosso espaço com os astros-->
     <div class="wrapper">
 
-        <canvas id="starfield" width="1500px" height="1500px"></canvas>
-       
+        <canvas id="starfield" width="1500px" height="1600px"></canvas>
+
         <!--Mitra solis invictos-->
 
         <div class="planet" id="sun">
@@ -39,12 +41,14 @@
             <img src="images/venus.png" alt="Venus victrix">
         </div>
 
-        <!--Gaia mater magna-->
-        <div class="planet" id="earth">
-            <img src="images/earth.png" alt="Mater magna">
+        <div class="box">
+            <!--Gaia mater magna-->
+            <div class="planet" id="earth">
+                <img src="images/earth.png" alt="Mater magna">
+            </div>
             <!--Diana trisformis diva-->
             <div class="planet" id="moon">
-                <img src="images/moon.png" alt="Trisformis diva" id="moon">
+                <img src="images/moon.png" alt="Trisformis diva">
             </div>
         </div>
 

@@ -8,14 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
         planet.addEventListener('click', () => {
             const planetName = planet.id;
             const planetInfo = getPlanetInfo(planetName);
-            infoWindow.innerHTML = `<img src="${planetInfo.image}" alt="${planetName}"><p>${planetInfo.description}</p>`;
+            infoWindow.innerHTML = `<img src="${planetInfo.image}" alt="${planetName}"><p>${planetInfo.description}</p> <button class="close-button">&times;</button>`;
             infoWindow.style.display = 'block';
+            const closeButton = infoWindow.querySelector('.close-button');
+      closeButton.addEventListener('click', () => {
+        infoWindow.style.display = 'none';
+      });
         });
         document.addEventListener('mouseleave', () => {
             infoWindow.style.display = 'none';
-        })
+        });
+
     });
 
+   
 
     function getPlanetInfo(planetName) {
         const planetInfoMap = {
@@ -23,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mercury: { description: 'Hermes trismegistus sapientis: Três vezes grande! Senhor dos segredos da humanidade e da filosofia.', image: 'images/mercury-info.png' },
             venus: { description: 'Venus victrix divina et gracilis: O poder de atração e desejo, senhora do amor e da fertilidade.', image: 'images/venus-info.jpg' },
             earth: { description: 'Gaia mater magna: Majestosa mãe Terra, a natureza geradora e mantenedora da vida.', image: 'images/earth-info.jpg' },
-            moon: { description: 'Diana trisformis diva: Senhora da caça, é a natureza selvagem e o poder feminino, tem três faces distintas.', image: 'images/moon-info.jpg' },
+            moon: {description: 'Diana trisformis diva: Senhora da caça, é a natureza selvagem e o poder feminino, tem três faces distintas.', image: 'images/moon-info.jpg' },
             mars: { description: 'Marte bellator et audaz: O senhor da arte da guerra, guerreiro corajoso de habilidade incomparável.', image: 'images/mars-info.jpg' },
             jupiter: { description: 'Jupiter divinus pater: Sábio pai celestial, governante supremo sobre a justiça e poder cósmico.', image: 'images/jupiter-info.jpg' },
             saturn: { description: 'Saturno senex deos temporum: Ancião entre os anciões, guardião do tempo e senhor da mortalidade universal.', image: 'images/saturn-info.jpg' },
@@ -37,4 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
         return planetInfoMap[planetName] || { description: 'No information available.', image: '' };
     };
 
+  
 });
